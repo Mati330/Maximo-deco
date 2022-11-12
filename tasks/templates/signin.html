@@ -1,0 +1,12 @@
+{% load  static %}   
+
+{{error}}
+
+<form action="/signin/" method="POST"> <!--con action creamos una accion al presionar el boton, que va mandar la info 
+                                        a la ruta que dejamos entre "", en este caso es "/signin/", esta rura la debe estar en urls.-->
+    {% csrf_token %}                    <!-- Este es el token generado por el servidor, para que la app no sea 'suplantada' -->
+    {{form.as_p}}                       <!-- formulario de auth -->
+    <button>
+        signin
+    </button>
+</form>
