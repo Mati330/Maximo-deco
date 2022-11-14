@@ -88,7 +88,8 @@ def signin(request):
             return redirect('index')
 ################### FUNCIONALIDADES ####################
 def cart(request):
-    return render(request, 'cart.html')
+    product = Product.objects.all
+    return render(request, 'cart2.html', {"product": product})
 def checkout(request):
     return render(request, 'checkout.html')
 def product(request):
@@ -97,5 +98,3 @@ def product(request):
 def shop(request):
     product = Product.objects.all
     return render(request, 'shop.html', {"product": product})
-
-
