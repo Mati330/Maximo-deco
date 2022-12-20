@@ -7,20 +7,85 @@
 <div class="products-catagories-area clearfix">
   <div class="amado-pro-catagory clearfix">
     <!-- Single Catagory -->
-  {%for productos in product%}
     <div class="single-products-catagory clearfix">
     
-      <a href="{% url 'shop' %}">
-        <img src="{{productos.imagen_product.url}}" alt="" />
+      <a href="{% url 'area_soporte' %}">
+        <img src="/static/img/core-img/Areaprincipal/Soportedos.JPG" alt="" />
         <!-- Hover Content -->
         <div class="hover-content">
-          <h4>{{productos.titulo}}</h4>
+          <h4>SOPORTE</h4>
           <div class="line"></div>
-          <p>{{productos.descripcion}}</p>
+          <p>Adrian Martinez</p>
         </div>
       </a>
     </div>
-  {% endfor %}
+    <div class="single-products-catagory clearfix">
+    
+      <a href="{% url 'area_desarrollo' %}">
+        <img src="/static/img/core-img/Areaprincipal/Desa.JPG" alt="" />
+        <!-- Hover Content -->
+        <div class="hover-content">
+          <h4>DESARROLLO</h4>
+          <div class="line"></div>
+          <p>Dario Wicen</p>
+        </div>
+      </a>
+    </div>
+  
+
+    <div class="single-products-catagory clearfix">
+    
+      <a href="{% url 'area_swbase' %}">
+        <img src="/static/img/core-img/Areaprincipal/Swbase.JPG" alt="" />
+        <!-- Hover Content -->
+        <div class="hover-content">
+          <h4>SW BASE</h4>
+          <div class="line"></div>
+          <p>Leonardo Raurell</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="single-products-catagory clearfix">
+    
+      <a href="{% url 'area_redes' %}">
+        <img src="/static/img/core-img/Areaprincipal/Redes.JPG" alt="" />
+        <!-- Hover Content -->
+        <div class="hover-content">
+          <h4>REDES</h4>
+          <div class="line"></div>
+          <p>Bartolomeo Gustavo</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="single-products-catagory clearfix">
+    
+      <a href="{% url 'area_tel' %}">
+        <img src="/static/img/core-img/Areaprincipal/Telefonia.JPG" alt="" />
+        <!-- Hover Content -->
+        <div class="hover-content">
+          <h4>TELEFONIA</h4>
+          <div class="line"></div>
+          <p>Bartolomeo Gustavo</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="single-products-catagory clearfix">
+    
+      <a href="{% url 'area_seginf' %}">
+        <img src="/static/img/core-img/Areaprincipal/Seguridadinf.JPG" alt="" />
+        <!-- Hover Content -->
+        <div class="hover-content">
+          <h4>SEGURIDAD INFORMATICA</h4>
+          <div class="line"></div>
+          <p>Carbone Esteban</p>
+        </div>
+      </a>
+    </div>
+
+
   </div>
 </div>
 <!-- Product Catagories Area End -->

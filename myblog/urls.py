@@ -15,21 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from tasks import views
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='index'),    
-    path('signup/', views.signup, name='signup'),
-    path('signin/', views.signin, name='signin'),
-    path('logout/', views.signout, name='logout'),
-    path('cart/', views.cart, name='cart'),
-    path('checkout/', views.checkout, name='checkout'),
-    path('product-details/', views.product, name='product'),
-    path('shop/', views.shop, name='shop'),
+    
+    # URL Pryecto Soporte HA 
+    path('myblog/', include ('tasks.urls')),
 ]
 
 
