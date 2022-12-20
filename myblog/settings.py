@@ -80,8 +80,6 @@ WSGI_APPLICATION = 'myblog.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 
-mysql://root:SJPaIMhP5GG2z6GdSB7O@containers-us-west-170.railway.app:7080/railway
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
