@@ -7,6 +7,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from .models import *
 from .forms import *
+from django.views.generic.detail import DetailView
 
 
 # Create your views here.
@@ -19,15 +20,17 @@ Vemos que dentro de esto, se va renderizar un html, y tenemos una variable,
 llamada title, que dentro del html podemos llamarla como 'mytitle'.
 """
 ## BASE HTML CONTENT ##
-def base(request):
-    logo = Logo.objects.all
-    return render(request, 'base.html', 
-                  {'logo': logo})
+
 ## HTMLS TEMPLATES ## 
+
 def home(request):
-    product = Product.objects.all
-    return render(request, 'index.html', 
-                  {"product": product})
+    Areadesarrollo= Referentes_desarrollo.objects.all
+    Areasoporte= Referentes_soporte.objects.all
+    Areaswbase= Referentes_swbase.objects.all
+    return render(request, 'index.html', {"Areadesarrollo": Areadesarrollo, 
+                                          "Areasoporte": Areasoporte,
+                                          "Areaswbase":Areaswbase},)
+            
 ###################### LOGS HTML #####################
 def signup(request):
     # aca indicamos, si entra por POST realiza el envio de datos para la bd
@@ -87,15 +90,52 @@ def signin(request):
             login(request, user)
             return redirect('index')
 ################### FUNCIONALIDADES ####################
-def cart(request):
-    return render(request, 'cart.html')
-def checkout(request):
-    return render(request, 'checkout.html')
-def product(request):
-    return render(request, 'product-details.html')
-@login_required
-def shop(request):
-    product = Product.objects.all
-    return render(request, 'shop.html', {"product": product})
+
+def area_soporte(request):
+    area_soporte = Referentes_soporte.objects.filter(nombre_referente="Adrian Martinez")
+    return render ( request, "area_soporte.html",{"area_soporte": area_soporte}) 
+
+def area_desarrollo(request):
+    area_desarrollo = Referentes_desarrollo.objects.filter(nombre_referente="Dario Waicen")
+    return render ( request, "area_desarrollo.html",{"area_desarrollo": area_desarrollo}) 
+
+def area_swbase(request):
+    area_swbase = Referentes_swbase.objects.filter(nombre_referente="Leonardo Raurell")
+    return render ( request, "area_swbase.html",{"area_swbase": area_swbase}) 
+
+def area_redes(request):
+    area_redes = Referentes_redes.objects.filter(nombre_referente="Bartolomeo Gustavo")
+    return render ( request, "area_redes.html",{"area_redes": area_redes}) 
+
+def area_tel(request):
+    area_tel = Referentes_tel.objects.filter(nombre_referente="Bartolomeo Gustavo")
+    return render ( request, "area_tel.html",{"area_tel": area_tel}) 
 
 
+def area_seginf(request):
+    area_seginf = Referentes_seginf.objects.filter(nombre_referente="Carbone Esteban")
+    return render ( request, "area_seginf.html",{"area_seginf": area_seginf}) 
+
+
+
+
+
+class ver_errores_soporte(DetailView): 
+    model = Referentes_soporte
+    template_name = "ver_errores_soporte.html"
+    
+class ver_errores_desarrollo(DetailView): 
+    model = Referentes_desarrollo
+    template_name = "ver_errores_desarrollo.html"
+    
+class ver_errores_swbase(DetailView): 
+    model = Referentes_swbase
+    template_name = "ver_errores_swbase.html"
+
+class ver_errores_redes(DetailView): 
+    model = Referentes_redes
+    template_name = "ver_errores_redes.html"
+    
+class ver_errores_seginf(DetailView): 
+    model = Referentes_seginf
+    template_name = "ver_errores_seginf.html"

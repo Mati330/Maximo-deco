@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% load static %} {% block contenidopagina %}
+
+<!-- Header Area End -->
+
+<div class="shop_sidebar_area">
+  <!-- ##### Single Widget ##### -->
+  <div class="widget catagory mb-50">
+    <!-- Widget Title -->
+    <h6 class="widget-title mb-30">Problematicas SWBase</h6>
+
+    <!--  Catagories  -->
+    <div class="catagories-menu">
+      <ul>
+        {%for ob in area_swbase %}
+        <li class="active"><a href="{% url 'ver_errores_swbase' ob.id %}" >{{ob.titulo_error}}</a></li>
+        {%endfor%}
+      </ul>
+    </div>
+  </div>
+  <!-- Pagination -->
+  <nav hidden aria-label="navigation">
+    <ul class="pagination justify-content-end mt-50">
+      <li class="page-item active">
+        <a class="page-link" href="/static/#">01.</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="/static/#">02.</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="/static/#">03.</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="/static/#">04.</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+{% endblock %}
