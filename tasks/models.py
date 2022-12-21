@@ -28,9 +28,9 @@ class Referentes_soporte(models.Model):
     
 class Referentes_desarrollo(models.Model):
     
-    imagen_error_desarrollouno = models.ImageField(upload_to='Referentes_desa/',null=True, blank=True)
-    imagen_error_desarrollodos = models.ImageField(upload_to='Referentes_desa/',null=True, blank=True)
-    imagen_error_desarrollotres = models.ImageField(upload_to='Referentes_desa/',null=True, blank=True)
+    imagen_error_desarrollouno = CloudinaryField(null=True, blank=True)
+    imagen_error_desarrollodos = CloudinaryField(null=True, blank=True)
+    imagen_error_desarrollotres = CloudinaryField(null=True, blank=True)
     area_principal = models.CharField(max_length=50,null=True)
     nombre_referente= models.CharField(max_length=50,null=True)
     nombres_integrantes= models.CharField(max_length=60,null=True)
@@ -46,9 +46,9 @@ class Referentes_desarrollo(models.Model):
     
 class Referentes_swbase(models.Model):
     
-    imagen_error_swbaseuno = models.ImageField(upload_to='Referentes_swbase/',null=True, blank=True)
-    imagen_error_swbasedos = models.ImageField(upload_to='Referentes_swbase/',null=True, blank=True)
-    imagen_error_swbasetres = models.ImageField(upload_to='Referentes_swbase/',null=True, blank=True)
+    imagen_error_swbaseuno = CloudinaryField(null=True, blank=True)
+    imagen_error_swbasedos = CloudinaryField(null=True, blank=True)
+    imagen_error_swbasetres = CloudinaryField(null=True, blank=True)
     area_principal = models.CharField(max_length=50,null=True)
     nombre_referente= models.CharField(max_length=50,null=True)
     nombres_integrantes= models.CharField(max_length=60,null=True)
@@ -64,9 +64,9 @@ class Referentes_swbase(models.Model):
 
 class Referentes_redes(models.Model):
     
-    imagen_error_redesuno = models.ImageField(upload_to='Referentes_redes/',null=True, blank=True)
-    imagen_error_redesdos = models.ImageField(upload_to='Referentes_redes/',null=True, blank=True)
-    imagen_error_redestres = models.ImageField(upload_to='Referentes_redes/',null=True, blank=True)
+    imagen_error_redesuno = CloudinaryField(null=True, blank=True)
+    imagen_error_redesdos = CloudinaryField(null=True, blank=True)
+    imagen_error_redestres = CloudinaryField(null=True, blank=True)
     area_principal = models.CharField(max_length=50,null=True)
     nombre_referente= models.CharField(max_length=50,null=True)
     nombres_integrantes= models.CharField(max_length=60,null=True)
@@ -82,9 +82,9 @@ class Referentes_redes(models.Model):
     
 class Referentes_tel(models.Model):
     
-    imagen_error_teluno = models.ImageField(upload_to='Referentes_tel/',null=True, blank=True)
-    imagen_error_teldos = models.ImageField(upload_to='Referentes_tel/',null=True, blank=True)
-    imagen_error_teltres = models.ImageField(upload_to='Referentes_tel/',null=True, blank=True)
+    imagen_error_teluno = CloudinaryField(null=True, blank=True)
+    imagen_error_teldos = CloudinaryField(null=True, blank=True)
+    imagen_error_teltres = CloudinaryField(null=True, blank=True)
     area_principal = models.CharField(max_length=50,null=True)
     nombre_referente= models.CharField(max_length=50,null=True)
     nombres_integrantes= models.CharField(max_length=60,null=True)
@@ -100,9 +100,9 @@ class Referentes_tel(models.Model):
     
 class Referentes_seginf(models.Model):
     
-    imagen_error_seginfuno = models.ImageField(upload_to='Referentes_seginf/',null=True, blank=True)
-    imagen_error_seginfdos = models.ImageField(upload_to='Referentes_seginf/',null=True, blank=True)
-    imagen_error_seginftres = models.ImageField(upload_to='Referentes_seginf/',null=True, blank=True)
+    imagen_error_seginfuno = CloudinaryField(null=True, blank=True)
+    imagen_error_seginfdos = CloudinaryField(null=True, blank=True)
+    imagen_error_seginftres =CloudinaryField(null=True, blank=True)
     area_principal = models.CharField(max_length=50,null=True)
     nombre_referente= models.CharField(max_length=50,null=True)
     nombres_integrantes= models.CharField(max_length=60,null=True)
