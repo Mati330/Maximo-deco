@@ -25,7 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     
     # URL Pryecto Soporte HA 
-    path('', include ('tasks.urls')),
+    path('myblog/', include ('tasks.urls')),
 ]
 
 
