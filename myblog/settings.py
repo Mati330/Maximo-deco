@@ -79,7 +79,6 @@ WSGI_APPLICATION = 'myblog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-postgresql://postgres:3fESFVjjebMcwG9djyb4@containers-us-west-107.railway.app:6790/railway
 
 DATABASES = {
     'default': {
