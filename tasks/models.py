@@ -1,14 +1,16 @@
 from django.db import models
 from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
+from django.db import models
+from cloudinary.models import CloudinaryField
 # Create your models here.
 
 
 class Referentes_soporte(models.Model):
     
-    imagen_error_soporteuno = models.ImageField(upload_to='Referentes_soporte/',null=True, blank=True)
-    imagen_error_soportedos = models.ImageField(upload_to='Referentes_soporte/',null=True, blank=True)
-    imagen_error_soportetres = models.ImageField(upload_to='Referentes_soporte/',null=True, blank=True)
+    imagen_error_soporteuno = CloudinaryField(null=True, blank=True)
+    imagen_error_soportedos = CloudinaryField(null=True, blank=True)
+    imagen_error_soportetres = CloudinaryField(null=True, blank=True)
     area_principal = models.CharField(max_length=50,null=True)
     nombre_referente= models.CharField(max_length=50,null=True)
     nombres_integrantes= models.CharField(max_length=60,null=True)
