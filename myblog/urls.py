@@ -24,8 +24,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     
-    # URL Pryecto Soporte HA 
-    path('myblog/', include ('tasks.urls')),
+    path('', include ('tasks.urls')),
 ]
 
 

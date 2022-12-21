@@ -23,13 +23,8 @@ llamada title, que dentro del html podemos llamarla como 'mytitle'.
 
 ## HTMLS TEMPLATES ## 
 
-def home(request):
-    Areadesarrollo= Referentes_desarrollo.objects.all
-    Areasoporte= Referentes_soporte.objects.all
-    Areaswbase= Referentes_swbase.objects.all
-    return render(request, 'index.html', {"Areadesarrollo": Areadesarrollo, 
-                                          "Areasoporte": Areasoporte,
-                                          "Areaswbase":Areaswbase},)
+def index(request):
+    return render(request, 'index.html',)
             
 ###################### LOGS HTML #####################
 def signup(request):
