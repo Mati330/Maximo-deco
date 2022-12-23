@@ -69,13 +69,16 @@
                 <a href="{% url 'index' %}"><img src="/static/img/core-img/logo.png" alt=""></a>
             </div>
             <!-- Amado Nav -->
+            {%if user.is_authenticated %}
             <nav class="amado-nav">
                 <ul>
                     <li class="active"><a href="{% url 'index' %}">Inicio</a></li>
-                    
-                   
+                    <li class="active"><a href= https://linktr.ee/hospitalaleman target=_blank>Programas para remoto</a></li>
+                    <li class="active"><a href="{% url 'formularios' %}">Formularios</a></li> 
+                    <li class="active"><a href=https://haleman.sharepoint.com/:f:/g/Gerencia-Sistemas/ElGxwqJrETxPixbx-rjszEwBivk4d2ktMOHHs5fsR3zeKg?e=hKQsan target=_blank>Carpeta SoporteMDA</a></li>
                 </ul>
             </nav>
+            {% endif %}
             <!-- Button Group -->
             <div class="amado-btn-group mt-30 mb-100">
                 <a hidden href="/static/#" class="btn amado-btn mb-15">%Descuentos%</a>

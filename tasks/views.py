@@ -106,14 +106,19 @@ def area_tel(request):
     area_tel = Referentes_tel.objects.filter(nombre_referente="Bartolomeo Gustavo")
     return render ( request, "area_tel.html",{"area_tel": area_tel}) 
 
-
 def area_seginf(request):
     area_seginf = Referentes_seginf.objects.filter(nombre_referente="Carbone Esteban")
     return render ( request, "area_seginf.html",{"area_seginf": area_seginf}) 
 
 
+def formularios(request):
+    formularios = Formularios.objects.filter(nombre_referente="Mariana Ferreyra")
+    return render ( request, "formularios.html",{"formularios": formularios}) 
 
 
+class ver_formularios(DetailView): 
+    model = Formularios
+    template_name = "ver_formularios.html"
 
 class ver_errores_soporte(DetailView): 
     model = Referentes_soporte
