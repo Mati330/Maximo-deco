@@ -91,13 +91,12 @@
 
                 <a href="{% url 'signup' %}" class="btn amado-btn active mb-15">Registrarme</a>
                 <a href="{% url 'signin' %}" class="btn amado-btn active">Logearme</a>
-
+                
                 {% endif %}
                 
             </div>
             <!-- Cart Menu -->
             <div class="cart-fav-search mb-100">
-                
                 <a hidden href="/static/#" class="fav-nav"><img src="/static/img/core-img/favorites.png" alt=""> Favourite</a>
                 <a hidden href="/static/#" class="search-nav"><img src="/static/img/core-img/search.png" alt=""> Search</a>
             </div>
@@ -107,6 +106,20 @@
                 <a hidden href="/static/#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                 <a hidden href="/static/#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
             </div>
+
+            <!--BOT CHAT-->
+            <script type="text/javascript">
+                (function(d, m){
+                    var kommunicateSettings = 
+                        {"appId":"21d53b19aecf64f60223dcb9eb2c50d8c","popupWidget":true,"automaticChatOpenOnNavigation":true};
+                    var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+                    s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+                    var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+                    window.kommunicate = m; m._globals = kommunicateSettings;
+                })(document, window.kommunicate || {});
+            /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+            </script>
+
         </header>
         <!-- Header Area End -->
         <!-- Product Catagories Area Start -->
