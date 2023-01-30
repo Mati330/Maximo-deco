@@ -7,7 +7,7 @@
                 <div class="d-flex align-items-center mt-lg-5 mb-4">
                     <div class="ms-3">
                         <div class="fw-bold">{{object.autor}}</div>
-                        <div class="text-muted">Seginf</div>
+                        <div class="text-muted">Desarrollo</div>
                     </div>
                 </div>
             </div>
@@ -26,22 +26,21 @@
                         <a hidden class="badge bg-secondary text-decoration-none link-light" href="#!">Solved</a>
                     </header>
                     <!-- Preview image figure-->
-                    {% if object.imagen_error_seginfuno %}
-                    <figure class="mb-4"><img class="img-fluid rounded" src="{{object.imagen_error_seginfuno.url}}" alt="..." /></figure>
+                    {% if object.imagen_error_formulariouno %}
+                    <figure class="mb-4"><img class="img-fluid rounded" src="{{object.imagen_error_formulariouno.url}}" alt="..." /></figure>
                     {%else%}
                     <p>Noimage</p>
                     {%endif%}
-                    {% if object.imagen_error_seginfdos %}
-                    <figure class="mb-4"><img class="img-fluid rounded" src="{{object.imagen_error_seginfdos.url}}" alt="..." /></figure>
+                    {% if object.imagen_error_formulariodos %}
+                    <figure class="mb-4"><img class="img-fluid rounded" src="{{object.imagen_error_formulariodos.url}}" alt="..." /></figure>
                     {%else%}
                     <p>Noimage</p>
                     {%endif%}
-                    {% if object.imagen_error_seginftres %}
-                    <figure class="mb-4"><img class="img-fluid rounded" src="{{object.imagen_error_seginftres.url}}" alt="..." /></figure>
+                    {% if object.imagen_error_formulariotres %}
+                    <figure class="mb-4"><img class="img-fluid rounded" src="{{object.imagen_error_formulariotres.url}}" alt="..." /></figure>
                     {%else%}
                     <p>Noimage</p>
                     {%endif%}
-                
 
 
                     <!-- Post content-->
