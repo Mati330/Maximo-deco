@@ -115,6 +115,9 @@ def formularios(request):
     formularios = Formularios.objects.filter(nombre_referente="Mariana Ferreyra")
     return render ( request, "formularios.html",{"formularios": formularios}) 
 
+def capacitacion(request):
+    capacitacion = Capacitacion.objects.filter(nombre_referente="Matias Alegre")
+    return render ( request, "capacitacion.html",{"capacitacion": capacitacion}) 
 
 class ver_formularios(DetailView): 
     model = Formularios
@@ -139,3 +142,7 @@ class ver_errores_redes(DetailView):
 class ver_errores_seginf(DetailView): 
     model = Referentes_seginf
     template_name = "ver_errores_seginf.html"
+    
+class ver_capacitacion(DetailView): 
+    model = Capacitacion
+    template_name = "ver_capacitacion.html"

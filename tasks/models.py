@@ -135,6 +135,21 @@ class Formularios(models.Model):
     def __str__(self):
         return f'{self.titulo_error}'
 
+class Capacitacion(models.Model):
+    
+    area_principal = models.CharField(max_length=50,null=True)
+    nombre_referente= models.CharField(max_length=50,null=True)
+    nombres_integrantes= models.CharField(max_length=60,null=True)
+    apps = models.CharField(max_length=500,null=True)
+
+    titulo_error = models.CharField(max_length=50,null=True)
+    descripcion_error = RichTextField(blank=True, null=True)
+    fecha_error= models.DateField()
+    autor = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
+    
+    def __str__(self):
+        return f'{self.titulo_error}'
+
  
 #class Errores_pedidos(models.Model):
  #   imagen = models.ImageField(null=True, blank=True)
