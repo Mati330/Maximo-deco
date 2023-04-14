@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load static %} {% block contenidopagina %} Biblioteca.dev | {{ object }}
+{% extends 'base.html' %} {% load static %} {% block contenidopagina %}
 
 <section class="py-5">
     <div class="container px-5 my-5">
@@ -6,8 +6,8 @@
             <div class="col-lg-3">
                 <div class="d-flex align-items-center mt-lg-5 mb-4">
                     <div class="ms-3">
-                        <div class="fw-bold">{{object.autor}}</div>
-                        <div class="text-muted">Seginf</div>
+                        <div class="fw-bold">Jefe Area: {{ object.nombre_referente }}</div>
+                        <div class="text-muted">Seguridad informatica</div>
                     </div>
                 </div>
             </div>
@@ -19,7 +19,6 @@
                         <!-- Post title-->
                         <h1 class="fw-bolder mb-1">{{ object.titulo_error }}</h1>
                         <!-- Post meta content-->
-                        <div class="text-muted fst-italic mb-2">{{object.autor}}</div>
                         <div class="text-muted fst-italic mb-2">{{object.fecha}}</div>
                         <!-- Post categories-->
                         <a hidden class="badge bg-secondary text-decoration-none link-light" href="#!">Problem</a>
@@ -47,7 +46,6 @@
                     <!-- Post content-->
                     <section class="mb-5">                       
                         <p class="fs-5 mb-4">{{ object.descripcion_error|safe }}</p>
-                        <p class="fs-5 mb-4">{{ object.nombre_referente }}</p>
                     </section>
                 </article>
                 <!-- Comments section-->

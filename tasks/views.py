@@ -106,14 +106,22 @@ def area_tel(request):
     area_tel = Referentes_tel.objects.filter(nombre_referente="Bartolomeo Gustavo")
     return render ( request, "area_tel.html",{"area_tel": area_tel}) 
 
-
 def area_seginf(request):
     area_seginf = Referentes_seginf.objects.filter(nombre_referente="Carbone Esteban")
     return render ( request, "area_seginf.html",{"area_seginf": area_seginf}) 
 
 
+def formularios(request):
+    formularios = Formularios.objects.filter(nombre_referente="Mariana Ferreyra")
+    return render ( request, "formularios.html",{"formularios": formularios}) 
 
+def capacitacion(request):
+    capacitacion = Capacitacion.objects.filter(nombre_referente="Matias Alegre")
+    return render ( request, "capacitacion.html",{"capacitacion": capacitacion}) 
 
+class ver_formularios(DetailView): 
+    model = Formularios
+    template_name = "ver_formularios.html"
 
 class ver_errores_soporte(DetailView): 
     model = Referentes_soporte
@@ -134,3 +142,7 @@ class ver_errores_redes(DetailView):
 class ver_errores_seginf(DetailView): 
     model = Referentes_seginf
     template_name = "ver_errores_seginf.html"
+    
+class ver_capacitacion(DetailView): 
+    model = Capacitacion
+    template_name = "ver_capacitacion.html"

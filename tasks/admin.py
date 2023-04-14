@@ -11,4 +11,9 @@ admin.site.register(Referentes_tel)
 admin.site.register(Referentes_seginf)
 
 
+admin.site.register(Formularios)
+admin.site.register(Capacitacion)
+
+
+
 

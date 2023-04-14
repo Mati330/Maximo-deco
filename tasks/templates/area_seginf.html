@@ -1,15 +1,52 @@
 {% extends 'base.html' %} {% load static %} {% block contenidopagina %}
 
+<style>
+  
+  .error-list {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    padding: 10px;
+  }
+  
+  .error-list li {
+    margin-bottom: 10px;
+  }
+  
+  .error-list li a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .error-list li a:hover {
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .widget-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    background-color: #f6f6f6;
+    padding: 10px;
+    border: 1px solid #eaeaea;
+  }
+
+</style>
+
 <!-- Header Area End -->
 
-<div class="shop_sidebar_area">
+<div class="row">
   <!-- ##### Single Widget ##### -->
-  <div class="widget catagory mb-50">
+  <div class="widget catagory col-sm-9">
     <!-- Widget Title -->
-    <h6 class="widget-title mb-30">Problematicas Seginf</h6>
+    <h6 class="widget-title mb-30">Problematicas Seguridad Informatica</h6>
 
     <!--  Catagories  -->
-    <div class="catagories-menu">
+    <div class="error-list">
       <ul>
         {%for ob in area_seginf %}
         <li class="active"><a href="{% url 'ver_errores_seginf' ob.id %}" >{{ob.titulo_error}}</a></li>

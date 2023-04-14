@@ -1,2 +1,2 @@
-# Maximo-deco
-Ecommerce con Django
+# Pika-app
+Web de soporte MDA
