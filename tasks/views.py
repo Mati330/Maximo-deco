@@ -2,6 +2,7 @@
 from django.shortcuts import render, redirect
 # cuando ejecuta devuelve un formulario
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
@@ -86,63 +87,77 @@ def signin(request):
             return redirect('index')
 ################### FUNCIONALIDADES ####################
 
+@login_required
 def area_soporte(request):
     area_soporte = Referentes_soporte.objects.filter(nombre_referente="Adrian Martinez")
     return render ( request, "area_soporte.html",{"area_soporte": area_soporte}) 
 
+@login_required
 def area_desarrollo(request):
     area_desarrollo = Referentes_desarrollo.objects.filter(nombre_referente="Dario Waicen")
     return render ( request, "area_desarrollo.html",{"area_desarrollo": area_desarrollo}) 
 
+@login_required
 def area_swbase(request):
     area_swbase = Referentes_swbase.objects.filter(nombre_referente="Leonardo Raurell")
     return render ( request, "area_swbase.html",{"area_swbase": area_swbase}) 
 
+@login_required
 def area_redes(request):
     area_redes = Referentes_redes.objects.filter(nombre_referente="Bartolomeo Gustavo")
     return render ( request, "area_redes.html",{"area_redes": area_redes}) 
 
+@login_required
 def area_tel(request):
     area_tel = Referentes_tel.objects.filter(nombre_referente="Bartolomeo Gustavo")
     return render ( request, "area_tel.html",{"area_tel": area_tel}) 
 
+@login_required
 def area_seginf(request):
     area_seginf = Referentes_seginf.objects.filter(nombre_referente="Carbone Esteban")
     return render ( request, "area_seginf.html",{"area_seginf": area_seginf}) 
 
-
+@login_required
 def formularios(request):
     formularios = Formularios.objects.filter(nombre_referente="Mariana Ferreyra")
     return render ( request, "formularios.html",{"formularios": formularios}) 
 
+@login_required
 def capacitacion(request):
     capacitacion = Capacitacion.objects.filter(nombre_referente="Matias Alegre")
     return render ( request, "capacitacion.html",{"capacitacion": capacitacion}) 
 
-class ver_formularios(DetailView): 
+
+class ver_formularios(LoginRequiredMixin, DetailView): 
     model = Formularios
     template_name = "ver_formularios.html"
 
-class ver_errores_soporte(DetailView): 
+
+class ver_errores_soporte(LoginRequiredMixin, DetailView): 
     model = Referentes_soporte
     template_name = "ver_errores_soporte.html"
-    
-class ver_errores_desarrollo(DetailView): 
+
+
+class ver_errores_desarrollo(LoginRequiredMixin, DetailView): 
     model = Referentes_desarrollo
     template_name = "ver_errores_desarrollo.html"
-    
-class ver_errores_swbase(DetailView): 
+
+ 
+class ver_errores_swbase(LoginRequiredMixin, DetailView): 
     model = Referentes_swbase
     template_name = "ver_errores_swbase.html"
 
-class ver_errores_redes(DetailView): 
+
+class ver_errores_redes(LoginRequiredMixin, DetailView): 
     model = Referentes_redes
     template_name = "ver_errores_redes.html"
     
-class ver_errores_seginf(DetailView): 
+
+class ver_errores_seginf(LoginRequiredMixin, DetailView): 
     model = Referentes_seginf
     template_name = "ver_errores_seginf.html"
     
-class ver_capacitacion(DetailView): 
+
+class ver_capacitacion(LoginRequiredMixin, DetailView): 
     model = Capacitacion
     template_name = "ver_capacitacion.html"
