@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenidopagina %}
+
+<style>
+  
+  .error-list {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    padding: 10px;
+  }
+  
+  .error-list li {
+    margin-bottom: 10px;
+  }
+  
+  .error-list li a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .error-list li a:hover {
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .widget-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    background-color: #f6f6f6;
+    padding: 10px;
+    border: 1px solid #eaeaea;
+  }
+
+  .opcion-principal {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #333;
+    background-color: #f6f6f6;
+    padding: 10px;
+    border: 1px solid #eaeaea;
+    margin-bottom: 10px;
+  }
+  
+
+</style>
+
+<div class="widget">
+  <div class="widget-title">
+    ¿Cómo puedo ayudarte?
+  </div>
+  <ul class="error-list">
+    <li>
+      <a href="#" onclick="toggleOptions('incidentes-options')">Incidentes</a>
+      <ul id="incidentes-options" style="display:none">
+        <li>
+          <a href="#" onclick="toggleOptions('programa-options')">Problema con un programa</a>
+          <ul id="programa-options" style="display:none">
+            <li><a href="#">FORMS</a></li>
+            <li><a href="#">HCOP</a></li>
+            <li><a href="#">HCI</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" onclick="toggleOptions('componente-options')">Problema con un componente físico</a>
+          <ul id="componente-options" style="display:none">
+            <li><a href="#">CPU</a></li>
+            <li><a href="#">Monitor</a></li>
+            <li><a href="#">Teclado/Mouse</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#" onclick="toggleOptions('requerimientos-options')">Requerimientos</a>
+      <ul id="requerimientos-options" style="display:none">
+        <li><a href="#">Solicitar nuevo equipo</a></li>
+        <li><a href="#">Solicitar software</a></li>
+        <li><a href="#">Solicitar acceso a sistemas</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<script>
+function toggleOptions(elementId) {
+  var options = document.getElementById(elementId);
+  if (options.style.display === "none") {
+    options.style.display = "block";
+  } else {
+    options.style.display = "none";
+  }
+}
+
+
+
+
+</script>
+
+{% endblock %}
+

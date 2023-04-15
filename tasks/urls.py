@@ -20,6 +20,8 @@ urlpatterns = [
     path('area_seginf/', area_seginf, name='area_seginf'),
     path('formularios/', formularios, name='formularios'),  
     path('capacitacion/', capacitacion, name='capacitacion'),
+    path('flow/', flow, name='flow'),
+    
     
     path('ver_errores_soporte/<pk>', ver_errores_soporte.as_view(), name='ver_errores_soporte'),
     path('ver_errores_desarrollo/<pk>', ver_errores_desarrollo.as_view(), name='ver_errores_desarrollo'),
