@@ -19,7 +19,7 @@
                         <!-- Post title-->
                         <h1 class="fw-bolder mb-1">{{ object.titulo_error }}</h1>
                         <!-- Post meta content-->
-                        <div class="text-muted fst-italic mb-2">{{object.autor}}</div>
+                        
                         <div class="text-muted fst-italic mb-2">{{object.fecha}}</div>
                         <!-- Post categories-->
                         <a hidden class="badge bg-secondary text-decoration-none link-light" href="#!">Problem</a>
@@ -28,18 +28,15 @@
                     <!-- Preview image figure-->
                     {% if object.imagen_error_formulariouno %}
                     <figure class="mb-4"><img class="img-fluid rounded" src="{{object.imagen_error_formulariouno.url}}" alt="..." /></figure>
-                    {%else%}
-                    <p>Noimage</p>
+                    
                     {%endif%}
                     {% if object.imagen_error_formulariodos %}
                     <figure class="mb-4"><img class="img-fluid rounded" src="{{object.imagen_error_formulariodos.url}}" alt="..." /></figure>
-                    {%else%}
-                    <p>Noimage</p>
+                    
                     {%endif%}
                     {% if object.imagen_error_formulariotres %}
                     <figure class="mb-4"><img class="img-fluid rounded" src="{{object.imagen_error_formulariotres.url}}" alt="..." /></figure>
-                    {%else%}
-                    <p>Noimage</p>
+                    
                     {%endif%}
                 
 

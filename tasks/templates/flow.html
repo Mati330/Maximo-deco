@@ -46,6 +46,11 @@
     border: 1px solid #eaeaea;
     margin-bottom: 10px;
   }
+
+  .dropdown-text {
+    color: red;
+    font-weight: bold;
+  }
   
 
 </style>
@@ -61,7 +66,18 @@
         <li>
           <a href="#" onclick="toggleOptions('programa-options')">Problema con un programa</a>
           <ul id="programa-options" style="display:none">
-            <li><a href="#">FORMS</a></li>
+            <li>
+              <a href="#" onclick="toggleOptions('forms-options')">FORMS</a>
+              <div class="dropdown" id="forms-options" style="display:none">
+                <div class="dropdown-content" style="right: 100%; top: 0;">
+                  <ul>
+                    <li><a href="{% url 'index' %}" onclick="toggleOptions('referente1-options')">¿El usuario es nuevo en el hospital?, si es nuevo y no puede usar una herramienta puede ser problema de permisos.</a></li>
+                    <li><a href="#" onclick="toggleOptions('referente2-options')">¿El usuario no es nuevo pero nunca uso esa app? Puede ser el mismo problema que el (1), permisos.</a></li>
+                    <li><a href="#" onclick="toggleOptions('referente3-options')">¿El usuario no es nuevo, siempre uso esa app y de un dia a otro no funciona? aca posiblemente es un error de la app, o del usuario y eso debemos identificar.</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
             <li><a href="#">HCOP</a></li>
             <li><a href="#">HCI</a></li>
           </ul>
@@ -96,10 +112,6 @@ function toggleOptions(elementId) {
     options.style.display = "none";
   }
 }
-
-
-
-
 </script>
 
 {% endblock %}
