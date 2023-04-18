@@ -130,6 +130,13 @@ def capacitacion(request):
 def flow(request):
     return render(request, 'flow.html')
 
+def incidentes(request):
+    return render(request, 'incidentes.html')
+
+
+def referentes(request):
+    return render(request, 'referentes.html')
+
 
 class ver_formularios(LoginRequiredMixin, DetailView): 
     model = Formularios

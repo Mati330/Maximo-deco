@@ -21,6 +21,8 @@ urlpatterns = [
     path('formularios/', formularios, name='formularios'),  
     path('capacitacion/', capacitacion, name='capacitacion'),
     path('flow/', flow, name='flow'),
+    path('incidentes/', incidentes, name='incidentes'),
+    path('referentes/', referentes, name='referentes'),
     
     
     path('ver_errores_soporte/<pk>', ver_errores_soporte.as_view(), name='ver_errores_soporte'),

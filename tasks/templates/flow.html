@@ -67,19 +67,122 @@
           <a href="#" onclick="toggleOptions('programa-options')">Problema con un programa</a>
           <ul id="programa-options" style="display:none">
             <li>
-              <a href="#" onclick="toggleOptions('forms-options')">FORMS</a>
+              <a href="#" onclick="toggleOptions('forms-options')">FORMS, HCOP, HCI</a>
               <div class="dropdown" id="forms-options" style="display:none">
                 <div class="dropdown-content" style="right: 100%; top: 0;">
                   <ul>
-                    <li><a href="{% url 'index' %}" onclick="toggleOptions('referente1-options')">¿El usuario es nuevo en el hospital?, si es nuevo y no puede usar una herramienta puede ser problema de permisos.</a></li>
-                    <li><a href="#" onclick="toggleOptions('referente2-options')">¿El usuario no es nuevo pero nunca uso esa app? Puede ser el mismo problema que el (1), permisos.</a></li>
-                    <li><a href="#" onclick="toggleOptions('referente3-options')">¿El usuario no es nuevo, siempre uso esa app y de un dia a otro no funciona? aca posiblemente es un error de la app, o del usuario y eso debemos identificar.</a></li>
+
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente1-options')">¿El usuario es nuevo en el hospital?, si es nuevo y no puede usar una herramienta puede ser problema de permisos.</a>
+                      <ul id="referente1-options" style="display:none">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/6">Enlace del instructivo, ¿Como pedir permisos?</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente2-options')">¿El usuario no es nuevo pero nunca uso esa app? Puede ser el mismo problema que el (1), permisos.
+                      </a>
+                      <ul id="referente2-options" style="display:none">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/6">Enlace del instructivo, ¿Como pedir permisos?</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente3-options')">¿El usuario no es nuevo, siempre uso esa app y de un dia a otro no funciona? aca posiblemente es un error de la app, o del usuario y eso debemos identificar.
+                      </a>
+                      <ul id="referente3-options" style="display:none">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/12">Enlace del instructivo, ¿Como identificar problemas?</a>
+                        </li>
+                      </ul>
+                    </li>
                   </ul>
                 </div>
               </div>
             </li>
-            <li><a href="#">HCOP</a></li>
-            <li><a href="#">HCI</a></li>
+            <li>
+              <a href="#" onclick="toggleOptions('hcop-options')">OUTLOOK</a>
+              <div class="dropdown" id="hcop-options" style="display:none">
+                <div class="dropdown-content" style="right: 100%; top: 0;">
+                  <ul>
+
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente4-options')">¿El usuario es nuevo en el hospital?, si es nuevo y no puede usar una herramienta puede ser problema de licencia.</a>
+                      <ul id="referente4-options" style="display:none">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/6">Enlace del instructivo, ¿Como identificar si el usuario tiene licencia de Outlook?</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente5-options')">¿El usuario no es nuevo pero nunca uso esa app? Puede ser el mismo problema que el (1), permisos.
+                      </a>
+                      <ul id="referente5-options" style="display:none">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/6">Enlace del instructivo, ¿Como identificar si el usuario tiene licencia de Outlook?</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente6-options')">¿El usuario no es nuevo, siempre uso esa app y de un dia a otro no funciona? aca posiblemente es un error de Outlook.
+                      </a>
+                      <ul id="referente6-options" style="display:none">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/12">Enlace del instructivo, Errores mas frecuentes de Outlook</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#" onclick="toggleOptions('impresoras-soft-options')">IMPRESORAS (soft)</a>
+              <div class="dropdown" id="impresoras-soft-options" style="display:none">
+                <div class="dropdown-content" style="right: 100%; top: 0;">
+                  <ul>
+
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente7-options')">Identificar el problema.
+                      </a>
+                      <ul id="referente7-options" style="display:none">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/6">Enlace del instructivo, ¿Como saber si la impresora esta en red?</a>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/6">Enlace del instructivo, ¿Como instalar una impresora?</a>
+                          
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente8-options')">El problema es fisico.
+                      </a>
+                      <ul id="referente8-options" style="display:none">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/6">Enlace del instructivo, ¿Como reclamar problema fisico de impresora?</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente9-options')">Impresora de etiquetas
+                      </a>
+                      <ul id="referente9-options" style="display:none">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/12">Enlace del instructivo, ¿Como reclamar impresoras de etiqueta?</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
           </ul>
         </li>
         <li>
