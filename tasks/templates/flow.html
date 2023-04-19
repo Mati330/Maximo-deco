@@ -9,6 +9,14 @@
     border: 1px solid #eaeaea;
     padding: 10px;
   }
+
+  .error-list li ul li a {
+    color: #A04000;
+  }
+
+  .error-list li ul li ul li a {
+    color: #B7950B;
+  }
   
   .error-list li {
     margin-bottom: 10px;
@@ -52,6 +60,7 @@
     font-weight: bold;
   }
   
+  
 
 </style>
 
@@ -69,12 +78,11 @@
             <li>
               <a href="#" onclick="toggleOptions('forms-options')">FORMS, HCOP, HCI</a>
               <div class="dropdown" id="forms-options" style="display:none">
-                <div class="dropdown-content" style="right: 100%; top: 0;">
+                <div class="dropdown-content" style="right: 100%; top: 0; ">
                   <ul>
-
                     <li>
                       <a href="#" onclick="toggleOptions('referente1-options')">¿El usuario es nuevo en el hospital?, si es nuevo y no puede usar una herramienta puede ser problema de permisos.</a>
-                      <ul id="referente1-options" style="display:none">
+                      <ul id="referente1-options" style= "display:none;">
                         <li>
                           <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/6">Enlace del instructivo, ¿Como pedir permisos?</a>
                         </li>
