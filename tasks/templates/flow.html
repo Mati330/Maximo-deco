@@ -70,13 +70,13 @@
   </div>
   <ul class="error-list">
     <li>
-      <a href="#" onclick="toggleOptions('incidentes-options')">Incidentes</a>
+      <a href="#" onclick="toggleOptions('incidentes-options')">INCIDENTES</a>
       <ul id="incidentes-options" style="display:none">
         <li>
-          <a href="#" onclick="toggleOptions('programa-options')">Problema con un programa</a>
+          <a href="#" onclick="toggleOptions('programa-options')">PROBLEMA CON UN SOFTWARE</a>
           <ul id="programa-options" style="display:none">
             <li>
-              <a href="#" onclick="toggleOptions('forms-options')">FORMS, HCOP, HCI</a>
+              <a href="#" onclick="toggleOptions('forms-options')">forms, hci, hcop</a>
               <div class="dropdown" id="forms-options" style="display:none">
                 <div class="dropdown-content" style="right: 100%; top: 0; ">
                   <ul>
@@ -113,7 +113,7 @@
               </div>
             </li>
             <li>
-              <a href="#" onclick="toggleOptions('hcop-options')">OUTLOOK</a>
+              <a href="#" onclick="toggleOptions('hcop-options')">Outlook</a>
               <div class="dropdown" id="hcop-options" style="display:none">
                 <div class="dropdown-content" style="right: 100%; top: 0;">
                   <ul>
@@ -151,7 +151,7 @@
               </div>
             </li>
             <li>
-              <a href="#" onclick="toggleOptions('impresoras-soft-options')">IMPRESORAS (soft)</a>
+              <a href="#" onclick="toggleOptions('impresoras-soft-options')">Impresoras (soft)</a>
               <div class="dropdown" id="impresoras-soft-options" style="display:none">
                 <div class="dropdown-content" style="right: 100%; top: 0;">
                   <ul>
@@ -194,23 +194,328 @@
           </ul>
         </li>
         <li>
-          <a href="#" onclick="toggleOptions('componente-options')">Problema con un componente físico</a>
+          <a href="#" onclick="toggleOptions('componente-options')">PROBLEMA DE HARDWARE</a>
           <ul id="componente-options" style="display:none">
-            <li><a href="#">CPU</a></li>
-            <li><a href="#">Monitor</a></li>
-            <li><a href="#">Teclado/Mouse</a></li>
+          <li>
+            <a href="#" onclick="toggleOptions('cpu-options')">Cpu, monitor, teclado, mouse</a>
+              <div class="dropdown" id="cpu-options" style="display:none;">
+                <div class="dropdown-content" style="right: 100%; top: 0; ">
+
+                  <ul>
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente10-options')">Verificar que los cables esten conectados.</a>
+                      <ul id="referente10-options" style= "display:none;">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/6">Enlace del instructivo, ¿Que hacer si no enciende la pc y los cables estan conectados y no estan dañados?</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente11-options')">Los cables estan desconectados
+                      </a>
+                      <ul id="referente11-options" style="display:none">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/6">Enlace del instructivo, ¿Como conectar una CPU?</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente12-options')">¿El problema es el toma corrientes?
+                      </a>
+                      <ul id="referente12-options" style="display:none">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/12">Enlace del instructivo, ¿Como pedir reparacion de un toma corriente.?</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              
+            </li>
+            <li>
+              <a href="#" onclick="toggleOptions('impresora-options')">Impresora, Scanner</a>
+              <div class="dropdown" id="impresora-options" style="display:none;">
+                <div class="dropdown-content" style="right: 100%; top: 0; ">
+
+                  <ul>
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente13-options')">Verificar que los cables esten conectados.</a>
+                      <ul id="referente13-options" style= "display:none;">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/6">Enlace del instructivo, ¿Que hacer si no enciende la impresora/scanner y los cables estan conectados y no estan dañados?</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente14-options')">Los cables estan desconectados, o dañados.
+                      </a>
+                      <ul id="referente11-options" style="display:none">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/6">Enlace del instructivo, ¿Como conectar una impresora/scanner, cambio de cables?</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente15-options')">¿El problema es el toma corrientes?
+                      </a>
+                      <ul id="referente12-options" style="display:none">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/12">Enlace del instructivo, ¿Como pedir reparacion de un toma corriente.?</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+            </li>
+            <li>
+              <a href="#" onclick="toggleOptions('otros-options')">Aparatos otros</a>
+              <div class="dropdown" id="otros-options" style="display:none;">
+                <div class="dropdown-content" style="right: 100%; top: 0; ">
+
+                  <ul>
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente16-options')">Verificar que los cables esten conectados.</a>
+                      <ul id="referente16-options" style= "display:none;">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/6">Enlace del instructivo, ¿Que hacer si no enciende la pc y los cables estan conectados y no estan dañados?</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente17-options')">Los cables estan desconectados
+                      </a>
+                      <ul id="referente11-options" style="display:none">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/6">Enlace del instructivo, ¿Como conectar una CPU?</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente18-options')">¿El problema es el toma corrientes?
+                      </a>
+                      <ul id="referente12-options" style="display:none">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/12">Enlace del instructivo, ¿Como pedir reparacion de un toma corriente.?</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+            </li>
           </ul>
         </li>
       </ul>
     </li>
     <li>
-      <a href="#" onclick="toggleOptions('requerimientos-options')">Requerimientos</a>
+      <a href="#" onclick="toggleOptions('requerimientos-options')">REQUERIMIENTOS</a>
       <ul id="requerimientos-options" style="display:none">
-        <li><a href="#">Solicitar nuevo equipo</a></li>
-        <li><a href="#">Solicitar software</a></li>
-        <li><a href="#">Solicitar acceso a sistemas</a></li>
+        <li>
+          <a href="#" onclick="toggleOptions('licencia-options')">SOFTWARE</a>
+          <ul id="licencia-options" style="display:none">
+            <li>
+              <a href="#" onclick="toggleOptions('appexterna-options')">Permisos / Licencias </a>
+              <div class="dropdown" id="appexterna-options" style="display:none">
+                <div class="dropdown-content" style="right: 100%; top: 0;">
+                  <ul>
+
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente21-options')">Tipos de licencias o permisos y como pedirlas</a>
+                      <ul id="referente21-options" style="display:none">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_soporte/14">Permisos FORMS</a>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_soporte/14">Permisos HCOP</a>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_soporte/14">Permisos ERP</a>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_soporte/14">Permisos CONSULTRON</a>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_soporte/14">Permisos REDES</a>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_soporte/14">Permisos MAXIMO</a>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_soporte/14">Permisos VPN/TARJETA DE COORDENADAS</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#" onclick="toggleOptions('copia-permisos-options')">Instalar programas</a>
+              <div class="dropdown" id="copia-permisos-options" style="display:none">
+                <div class="dropdown-content" style="right: 100%; top: 0;">
+                  <ul>
+
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente24-options')">Instalar programas libres
+                      </a>
+                      <ul id="referente24-options" style="display:none">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_soporte/16">Enlace del instructivo, ¿Como saber si la impresora esta en red?</a>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_soporte/15">Enlace del instructivo, ¿Como instalar una impresora?</a>
+                          
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente25-options')">Instalar programas usados en HA
+                      </a>
+                      <ul id="referente25-options" style="display:none">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_soporte/17">Instalar FORMS</a>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_soporte/17">Instalar CARESTREAM</a>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_soporte/17">Instalar HAIDFX</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente26-options')">Instalar impresoras /scanner
+                      </a>
+                      <ul id="referente26-options" style="display:none">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_soporte/17">Instalar impresoras</a>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_soporte/17">Instalar scanner</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" onclick="toggleOptions('pedido-hard-options')">HARDWARE</a>
+          <ul id="pedido-hard-options" style="display:none">
+          <li>
+            <a href="#" onclick="toggleOptions('monitor-options')">Perifericos</a>
+              <div class="dropdown" id="monitor-options" style="display:none;">
+                <div class="dropdown-content" style="right: 100%; top: 0; ">
+
+                  <ul>
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente27-options')">Teclado, Mouse</a>
+                      <ul id="referente27-options" style= "display:none;">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/6">Enlace del instructivo, ¿Que hacer si no enciende la pc y los cables estan conectados y no estan dañados?</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente28-options')">Cpu, monitor, scanner.
+                      </a>
+                      <ul id="referente28-options" style="display:none">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/6">Enlace del instructivo, ¿Como conectar una CPU?</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente29-options')">¿El problema es el toma corrientes?
+                      </a>
+                      <ul id="referente29-options" style="display:none">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/12">Enlace del instructivo, ¿Como pedir reparacion de un toma corriente.?</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              
+            </li>
+            <li>
+              <a href="#" onclick="toggleOptions('scanner-options')">Impresora, Scanner</a>
+              <div class="dropdown" id="scanner-options" style="display:none;">
+                <div class="dropdown-content" style="right: 100%; top: 0; ">
+
+                  <ul>
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente30-options')">Verificar que los cables esten conectados.</a>
+                      <ul id="referente30-options" style= "display:none;">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/6">Enlace del instructivo, ¿Que hacer si no enciende la impresora/scanner y los cables estan conectados y no estan dañados?</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente31-options')">Los cables estan desconectados, o dañados.
+                      </a>
+                      <ul id="referente11-options" style="display:none">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/6">Enlace del instructivo, ¿Como conectar una impresora/scanner, cambio de cables?</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente32-options')">¿El problema es el toma corrientes?
+                      </a>
+                      <ul id="referente12-options" style="display:none">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/12">Enlace del instructivo, ¿Como pedir reparacion de un toma corriente.?</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+            </li>
+            <li>
+              <a href="#" onclick="toggleOptions('aparatos-otros-options')">Aparatos otros</a>
+              <div class="dropdown" id="aparatos-otros-options" style="display:none;">
+                <div class="dropdown-content" style="right: 100%; top: 0; ">
+
+                  <ul>
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente33-options')">Verificar que los cables esten conectados.</a>
+                      <ul id="referente33-options" style= "display:none;">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/6">Enlace del instructivo, ¿Que hacer si no identificamos el aparato que tiene el problema?</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#" onclick="toggleOptions('referente35-options')">¿El problema es el toma corrientes?
+                      </a>
+                      <ul id="referente35-options" style="display:none">
+                        <li>
+                          <a href="https://soporte-ha.up.railway.app/ver_errores_desarrollo/12">Enlace del instructivo, ¿Como pedir reparacion de un toma corriente.?</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </li>
       </ul>
     </li>
+    <li>
   </ul>
 </div>
 

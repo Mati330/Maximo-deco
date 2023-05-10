@@ -126,7 +126,7 @@ def formularios(request):
 def capacitacion(request):
     capacitacion = Capacitacion.objects.filter(nombre_referente="Matias Alegre")
     return render ( request, "capacitacion.html",{"capacitacion": capacitacion}) 
-
+@login_required
 def flow(request):
     return render(request, 'flow.html')
 
