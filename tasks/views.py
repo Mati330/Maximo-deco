@@ -10,6 +10,13 @@ from .models import *
 from .forms import *
 from django.views.generic.detail import DetailView
 
+from openpyxl import Workbook
+from openpyxl.utils import get_column_letter
+from openpyxl.drawing.image import Image
+from openpyxl.styles import Font
+
+
+
 
 # Create your views here.
 """
@@ -171,3 +178,46 @@ class ver_errores_seginf(LoginRequiredMixin, DetailView):
 class ver_capacitacion(LoginRequiredMixin, DetailView): 
     model = Capacitacion
     template_name = "ver_capacitacion.html"
+    
+##aplicacion para EXCEL form
+
+def formulario(request):
+    return render(request, 'formulario.html')
+
+
+def generar_excel(request):
+    # Obtener los datos del formulario
+    titulo = request.POST.get('titulo')
+    reclamante = request.POST.get('reclamante')
+    afectado = request.POST.get('afectado')
+    contacto = request.POST.get('contacto')
+
+    # Crear el libro de trabajo de Excel
+    wb = Workbook()
+    ws = wb.active
+
+    # Agregar los datos al archivo Excel
+    datos = [('Título de error', titulo),
+             ('Nombre de reclamante', reclamante),
+             ('Nombre de afectado', afectado),
+             ('Número de contacto', contacto)]
+
+    for row in range(len(datos)):
+        label, value = datos[row]
+        col_label = get_column_letter(1)
+        col_value = get_column_letter(2)
+
+        cell_label = '{}{}'.format(col_label, row+1)
+        cell_value = '{}{}'.format(col_value, row+1)
+
+        ws[cell_label] = label
+        ws[cell_value] = value
+
+    # Guardar el archivo Excel
+    file_path = 'C:/Users/Public/Downloads/nuevo.xlsx'  # Especifica la ruta y el nombre del archivo
+    wb.save(file_path)
+
+    # Redireccionar o retornar una respuesta, según tus necesidades
+    # Por ejemplo, puedes redirigir al usuario a una página de éxito o descargar automáticamente el archivo
+
+    return render(request, 'index.html')

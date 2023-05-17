@@ -1,0 +1,20 @@
+
+
+<form method="post" action="{% url 'generar_excel' %}">
+    {% csrf_token %}
+    <label>Título de error:</label>
+    <input type="text" name="titulo">
+    <br>
+    <label>Nombre de reclamante:</label>
+    <input type="text" name="reclamante">
+    <br>
+    <label>Nombre de afectado:</label>
+    <input type="text" name="afectado">
+    <br>
+    <label>Número de contacto:</label>
+    <input type="text" name="contacto">
+    <br>
+    <button type="submit">Generar Excel</button>
+</form>
+
+
