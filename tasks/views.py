@@ -1,4 +1,6 @@
 
+
+import os
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, FileResponse
 # cuando ejecuta devuelve un formulario
@@ -13,10 +15,6 @@ from django.views.generic.detail import DetailView
 
 from openpyxl import Workbook
 from openpyxl.utils import get_column_letter
-from openpyxl.drawing.image import Image
-from openpyxl.styles import Font
-import os
-
 
 
 
@@ -187,16 +185,17 @@ def formulario(request):
     return render(request, 'formulario.html')
 
 
-from django.shortcuts import render
-from openpyxl import Workbook
-from openpyxl.utils import get_column_letter
-import os
+
 
 def formulario(request):
     return render(request, 'formulario.html')
 
 def error_excel(request):
     return render(request, 'error_excel.html')
+
+def exito(request):
+    return render(request, 'exito.html')
+
 
 def generar_excel(request):
     # Obtener los datos del formulario
@@ -232,8 +231,5 @@ def generar_excel(request):
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
     wb.save(file_path)
 
-    # Retornar una respuesta para descargar el archivo
-    with open(file_path, 'rb') as f:
-        response = FileResponse(f, as_attachment=True, filename='nuevo.xlsx')
-        return response
+    return render(request, 'exito.html')
 

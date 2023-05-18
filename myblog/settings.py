@@ -169,3 +169,6 @@ cloudinary.config(
 )
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
+os.environ['RUTA_FORM_RECLAMOS'] = 'C:/FORMS_EXCEL'

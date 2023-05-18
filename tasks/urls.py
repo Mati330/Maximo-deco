@@ -26,6 +26,7 @@ urlpatterns = [
     path('formulario/', formulario, name='formulario'),
     path('generar_excel/', generar_excel, name='generar_excel'),
     path('error_excel/', error_excel, name='error_excel'),
+    path('exito/', exito, name='exito'),
     
     path('ver_errores_soporte/<pk>', ver_errores_soporte.as_view(), name='ver_errores_soporte'),
     path('ver_errores_desarrollo/<pk>', ver_errores_desarrollo.as_view(), name='ver_errores_desarrollo'),
