@@ -226,6 +226,7 @@ def generar_excel(request):
     ruta_archivos = os.getenv('RUTA_FORM_RECLAMOS')
     if ruta_archivos is not None:
         file_path = os.path.join(ruta_archivos, 'nuevo.xlsx')
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)
         wb.save(file_path)
     else:
         return render(request, 'formulario.html',)
