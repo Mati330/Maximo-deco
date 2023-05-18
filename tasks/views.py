@@ -1,5 +1,6 @@
 
 from django.shortcuts import render, redirect
+from django.http import HttpResponse, FileResponse
 # cuando ejecuta devuelve un formulario
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -227,15 +228,12 @@ def generar_excel(request):
 
     # Guardar el archivo Excel
     ruta_archivos = os.getenv('RUTA_FORM_RECLAMOS')
-    if ruta_archivos is not None:
-        file_path = os.path.join(ruta_archivos, 'nuevo.xlsx')
-        os.makedirs(os.path.dirname(file_path), exist_ok=True)
-        wb.save(file_path)
-    else:
-        return render(request, 'error_excel.html')
+    file_path = os.path.join(ruta_archivos, 'nuevo.xlsx')
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+    wb.save(file_path)
 
-    # Redireccionar o retornar una respuesta, según tus necesidades
-    # Por ejemplo, puedes redirigir al usuario a una página de éxito o descargar automáticamente el archivo
-
-    return render(request, 'index.html')
+    # Retornar una respuesta para descargar el archivo
+    with open(file_path, 'rb') as f:
+        response = FileResponse(f, as_attachment=True, filename='nuevo.xlsx')
+        return response
 
