@@ -14,6 +14,7 @@ from openpyxl import Workbook
 from openpyxl.utils import get_column_letter
 from openpyxl.drawing.image import Image
 from openpyxl.styles import Font
+import os
 
 
 
@@ -185,6 +186,14 @@ def formulario(request):
     return render(request, 'formulario.html')
 
 
+from django.shortcuts import render
+from openpyxl import Workbook
+from openpyxl.utils import get_column_letter
+import os
+
+def formulario(request):
+    return render(request, 'formulario.html')
+
 def generar_excel(request):
     # Obtener los datos del formulario
     titulo = request.POST.get('titulo')
@@ -214,10 +223,11 @@ def generar_excel(request):
         ws[cell_value] = value
 
     # Guardar el archivo Excel
-    file_path = 'C:/Users/Public/Downloads/nuevo.xlsx'  # Especifica la ruta y el nombre del archivo
+    file_path = os.path.join(os.getenv('RUTA_ARCHIVOS'), 'nuevo.xlsx')
     wb.save(file_path)
 
     # Redireccionar o retornar una respuesta, según tus necesidades
     # Por ejemplo, puedes redirigir al usuario a una página de éxito o descargar automáticamente el archivo
 
     return render(request, 'index.html')
+
