@@ -194,6 +194,9 @@ import os
 def formulario(request):
     return render(request, 'formulario.html')
 
+def error_excel(request):
+    return render(request, 'error_excel.html')
+
 def generar_excel(request):
     # Obtener los datos del formulario
     titulo = request.POST.get('titulo')
@@ -229,7 +232,7 @@ def generar_excel(request):
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
         wb.save(file_path)
     else:
-        return render(request, 'formulario.html',)
+        return render(request, 'error.html')
 
     # Redireccionar o retornar una respuesta, según tus necesidades
     # Por ejemplo, puedes redirigir al usuario a una página de éxito o descargar automáticamente el archivo
