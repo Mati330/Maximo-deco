@@ -223,8 +223,12 @@ def generar_excel(request):
         ws[cell_value] = value
 
     # Guardar el archivo Excel
-    file_path = os.path.join(os.getenv('RUTA_FORM_RECLAMOS'), 'nuevo.xlsx')
-    wb.save(file_path)
+    ruta_archivos = os.getenv('RUTA_FORM_RECLAMOS')
+    if ruta_archivos is not None:
+        file_path = os.path.join(ruta_archivos, 'nuevo.xlsx')
+        wb.save(file_path)
+    else:
+        return render(request, 'formulario.html',)
 
     # Redireccionar o retornar una respuesta, según tus necesidades
     # Por ejemplo, puedes redirigir al usuario a una página de éxito o descargar automáticamente el archivo
