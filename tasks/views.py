@@ -223,7 +223,7 @@ def generar_excel(request):
         ws[cell_value] = value
 
     # Guardar el archivo Excel
-    file_path = os.path.join(os.getenv('RUTA_ARCHIVOS'), 'nuevo.xlsx')
+    file_path = os.path.join(os.getenv('RUTA_FORM_RECLAMOS'), 'nuevo.xlsx')
     wb.save(file_path)
 
     # Redireccionar o retornar una respuesta, según tus necesidades
