@@ -232,7 +232,7 @@ def generar_excel(request):
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
         wb.save(file_path)
     else:
-        return render(request, 'error.html')
+        return render(request, 'error_excel.html')
 
     # Redireccionar o retornar una respuesta, según tus necesidades
     # Por ejemplo, puedes redirigir al usuario a una página de éxito o descargar automáticamente el archivo
