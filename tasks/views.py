@@ -184,12 +184,6 @@ class ver_capacitacion(LoginRequiredMixin, DetailView):
 def formulario(request):
     return render(request, 'formulario.html')
 
-
-
-
-def formulario(request):
-    return render(request, 'formulario.html')
-
 def error_excel(request):
     return render(request, 'error_excel.html')
 
@@ -232,4 +226,45 @@ def generar_excel(request):
     wb.save(file_path)
 
     return render(request, 'exito.html')
+
+######## PANEL DE BUSQUEDA #############
+
+def resultados_de_busqueda(request):
+    query = request.GET.get('query', '')
+
+    # Realizar la búsqueda en varios modelos
+    resultados_modelo1 = Referentes_soporte.objects.filter(titulo_error__icontains=query)
+    resultados_modelo2 = Referentes_desarrollo.objects.filter(titulo_error__icontains=query)
+    resultados_modelo3 = Referentes_swbase.objects.filter(titulo_error__icontains=query)
+    resultados_modelo4 = Referentes_redes.objects.filter(titulo_error__icontains=query)
+    resultados_modelo5 = Referentes_tel.objects.filter(titulo_error__icontains=query)
+    resultados_modelo6 = Referentes_seginf.objects.filter(titulo_error__icontains=query)
+    resultados_modelo7 = Formularios.objects.filter(titulo_error__icontains=query)
+
+    # Combinar los resultados en una lista de diccionarios
+    resultados = []
+    for resultado in resultados_modelo1:
+        resultados.append({'modelo': 'Modelo1', 'objeto': resultado})
+        
+    for resultado in resultados_modelo2:
+        resultados.append({'modelo': 'Modelo2', 'objeto': resultado})
+    
+    for resultado in resultados_modelo3:
+        resultados.append({'modelo': 'Modelo3', 'objeto': resultado})
+    
+    for resultado in resultados_modelo4:
+        resultados.append({'modelo': 'Modelo4', 'objeto': resultado})
+    
+    for resultado in resultados_modelo5:
+        resultados.append({'modelo': 'Modelo5', 'objeto': resultado})
+    
+    for resultado in resultados_modelo6:
+        resultados.append({'modelo': 'Modelo6', 'objeto': resultado})
+    
+    for resultado in resultados_modelo7:
+        resultados.append({'modelo': 'Modelo7', 'objeto': resultado})
+    
+
+
+    return render(request, 'search.html', {'resultados': resultados})
 

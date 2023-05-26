@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% load static %} {% block contenidopagina %}
+
+
+{% if resultados %}
+    {% for resultado in resultados %}
+        {% if resultado.modelo == "Modelo1" %}
+            <a href="{% url 'ver_errores_soporte' pk=resultado.objeto.id %}">
+                [SOPORTE] {{ resultado.objeto.titulo_error }}
+            </a>
+        {% elif resultado.modelo == "Modelo2" %}
+            <a href="{% url 'ver_errores_desarrollo' pk=resultado.objeto.id %}">
+                [DESARROLLO] {{ resultado.objeto.titulo_error }}
+            </a>
+        {% elif resultado.modelo == "Modelo3" %}
+            <a href="{% url 'ver_errores_swbase' pk=resultado.objeto.id %}">
+                [SW BASE] {{ resultado.objeto.titulo_error }}
+            </a>
+        {% elif resultado.modelo == "Modelo4" %}
+            <a href="{% url 'ver_errores_redes' pk=resultado.objeto.id %}">
+                [REDES] {{ resultado.objeto.titulo_error }}
+            </a>
+        {% elif resultado.modelo == "Modelo5" %}
+            <a href="{% url 'ver_errores_tel' pk=resultado.objeto.id %}">
+                [TELEFONIA] {{ resultado.objeto.titulo_error }}
+            </a>
+        {% elif resultado.modelo == "Modelo6" %}
+            <a href="{% url 'ver_errores_seginf' pk=resultado.objeto.id %}">
+                [SEGURIDAD INF] {{ resultado.objeto.titulo_error }}
+            </a>
+        {% elif resultado.modelo == "Modelo7" %}
+            <a href="{% url 'ver_formularios' pk=resultado.objeto.id %}">
+                [UTILES] {{ resultado.objeto.titulo_error }}
+            </a>
+        {% endif %}
+    {% endfor %}
+{% else %}
+    <p>No se encontraron resultados.</p>
+{% endif %}
+
+{% endblock %}
