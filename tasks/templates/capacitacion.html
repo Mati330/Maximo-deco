@@ -3,47 +3,61 @@
 
 {% block contenidopagina %}
 
+
 <style>
-  .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 11px rgba(33,33,33,.2);
-  }
-</style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .course {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .course-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .course-video {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* Proporción 16:9 */
+            margin-bottom: 20px;
+        }
+        
+        .course-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 
 <div class="container">
-
   <h1 class="text-center my-5">Cursos disponibles</h1>
-  
-  <div class="card-deck">
-    <div class="card card-hover">
-      <img src="{% static 'img/logo.png' %}" class="card-img-top" alt="Módulo I">
-      <div class="card-body">
-        <h5 class="card-title">Módulo I</h5>
-        <p class="card-text">Aprende herramientas</p>
-        <a class="btn btn-warning px-1 ml-auto" href="https://www.youtube.com/watch?v=wjKjrw_Icg0" target="_blank">Ver</a>
-      </div>
+        <div class="course">
+            <h1 class="course-title">Curso I - Herramientas Básicas</h1>
+            <div class="course-video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/wjKjrw_Icg0" title="Curso I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
     </div>
-
-    <div class="card card-hover">
-      <img src="{% static 'img/logo.png' %}" class="card-img-top" alt="Módulo II">
-      <div class="card-body">
-        <h5 class="card-title">Módulo II</h5>
-        <p class="card-text">Aprende a utilizar las herramientas necesarias para gestion de jira.</p>
-        <a class="btn btn-warning px-1 ml-auto" href="https://https://www.youtube.com/" target="_blank">Ver</a>
-      </div>
-    </div>
-
-    <div class="card card-hover">
-      <img src="{% static 'img/logo.png' %}" class="card-img-top" alt="Módulo III">
-      <div class="card-body">
-        <h5 class="card-title">Módulo III</h5>
-        <p class="card-text">Aprende habilidades avanzadas.</p>
-        <a class="btn btn-warning px-1 ml-auto" href="https://https://www.youtube.com/" target="_blank">Ver</a>
-      </div>
-    </div>
-  </div>
-  
-</div>
 
 {% endblock %}
 
