@@ -159,6 +159,9 @@ class Novedad(models.Model):
     hora = models.TimeField()
     texto = RichTextField(blank=True, null=True)
     enlace = models.URLField(blank=True, null=True)
+    
+    def __str__(self):
+        return f'{self.fecha}'
 
 
 
