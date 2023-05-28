@@ -2,97 +2,66 @@
 {% load static %}
 
 {% block contenidopagina %}
-              
-{%if user.is_authenticated %}
-
-
-
-
-<!-- Product Catagories Area Start -->
-<div class="products-catagories-area clearfix">
-  <div class="amado-pro-catagory clearfix">
-    <!-- Single Catagory -->
-    <div class="single-products-catagory clearfix">
-      <a href="{% url 'area_soporte' %}">
-        <img src="https://res.cloudinary.com/dohmubymo/image/upload/v1671657836/Soportedos_td9nyh.jpg" alt="" />
-        <!-- Hover Content -->
-        <div class="hover-content">
-          <h4>SOPORTE</h4>
-          <div class="line"></div>
-          <p>Adrian Martinez</p>
+    <div class="products-catagories-area clearfix">
+        <div class="amado-pro-catagory">
+            <div class="single-products-catagory soporte">
+                <a href="{% url 'area_soporte' %}">SOPORTE</a>
+            </div>
+            <div class="single-products-catagory desarrollo">
+                <a href="{% url 'area_desarrollo' %}">DESARROLLO</a>
+            </div>
+            <div class="single-products-catagory sw-base">
+                <a href="{% url 'area_swbase' %}">SW BASE</a>
+            </div>
+            <div class="single-products-catagory redes">
+                <a href="{% url 'area_redes' %}">REDES</a>
+            </div>
+            <div class="single-products-catagory telefonia">
+                <a href="{% url 'area_tel' %}">TELEFONIA</a>
+            </div>
+            <div class="single-products-catagory seguridad-informatica">
+                <a href="{% url 'area_seginf' %}">SEGURIDAD INFORMATICA</a>
+            </div>
         </div>
-      </a>
-    </div>
-    <div class="single-products-catagory clearfix">
+        <br>
+        <br>
+        <br>
+        
+
+        <!-- Agregar el cuadro de comentarios -->
     
-      <a href="{% url 'area_desarrollo' %}">
-        <img src="https://res.cloudinary.com/dohmubymo/image/upload/v1671657909/Desa_ydcjvv.jpg" alt="" />
-        <!-- Hover Content -->
-        <div class="hover-content">
-          <h4>DESARROLLO</h4>
-          <div class="line"></div>
-          <p>Dario Wicen</p>
-        </div>
-      </a>
-    </div>
-  
+        <h3>Deja tu comentario</h3>
+        <form method="post" action="{% url 'crear_comentario' %}">
+            {% csrf_token %}
+            <textarea name="contenido" placeholder="Escribe tu comentario aquí"></textarea>
+            <button type="submit">Enviar comentario</button>
+        </form>
 
-    <div class="single-products-catagory clearfix">
+        <br>
+        <br>
+        <br>
+
     
-      <a href="{% url 'area_swbase' %}">
-        <img src="https://res.cloudinary.com/dohmubymo/image/upload/v1671657909/Swbase_vufq6z.jpg" alt="" />
-        <!-- Hover Content -->
-        <div class="hover-content">
-          <h4>SW BASE</h4>
-          <div class="line"></div>
-          <p>Leonardo Raurell</p>
-        </div>
-      </a>
-    </div>
 
-    <div class="single-products-catagory clearfix">
+    <!-- Mostrar los comentarios -->
     
-      <a href="{% url 'area_redes' %}">
-        <img src="https://res.cloudinary.com/dohmubymo/image/upload/v1671657909/Redes_s3gqo5.jpg" alt="" />
-        <!-- Hover Content -->
-        <div class="hover-content">
-          <h4>REDES</h4>
-          <div class="line"></div>
-          <p>Bartolomeo Gustavo</p>
+    <h3>Comentarios</h3>
+    {% for comentario in comentarios %}
+        <div class="comment">
+            <div class="comment-info">
+                <span class="comment-author">{{ comentario.usuario }}</span>
+                <span class="comment-date">{{ comentario.fecha }} a las {{ comentario.hora }}</span>
+            </div>
+            <p>{{ comentario.contenido }}</p>
         </div>
-      </a>
+    {% empty %}
+        <p>No hay comentarios aún.</p>
+    {% endfor %}
+
     </div>
-
-    <div class="single-products-catagory clearfix">
-    
-      <a href="{% url 'area_tel' %}">
-        <img src="https://res.cloudinary.com/dohmubymo/image/upload/v1671657909/Telefonia_pa5hr1.jpg" alt="" />
-        <!-- Hover Content -->
-        <div class="hover-content">
-          <h4>TELEFONIA</h4>
-          <div class="line"></div>
-          <p>Bartolomeo Gustavo</p>
-        </div>
-      </a>
-    </div>
-
-    <div class="single-products-catagory clearfix">
-    
-      <a href="{% url 'area_seginf' %}">
-        <img src="https://res.cloudinary.com/dohmubymo/image/upload/v1671657909/Seguridadinf_bgstqb.jpg" alt="" />
-        <!-- Hover Content -->
-        <div class="hover-content">
-          <h4>SEGURIDAD INFORMATICA</h4>
-          <div class="line"></div>
-          <p>Carbone Esteban</p>
-        </div>
-      </a>
-    </div>
-
-
-  </div>
-</div>
-<!-- Product Catagories Area End -->
-{%endif%}
 
 {% endblock %}
+
+<img src="https://res.cloudinary.com/dohmubymo/image/upload/v1671657836/Soportedos_td9nyh.jpg" alt="" />
+
+<img src="https://res.cloudinary.com/dohmubymo/image/upload/v1671657909/Desa_ydcjvv.jpg" alt="" />

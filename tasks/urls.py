@@ -33,6 +33,8 @@ urlpatterns = [
     path('exito/', exito, name='exito'),
     #### Panel de busqueda####
     path('search/', resultados_de_busqueda, name='search'),
+    ### coment ### 
+    path('crear-comentario/', crear_comentario, name='crear_comentario'),
     
     
     path('ver_errores_soporte/<pk>', ver_errores_soporte.as_view(), name='ver_errores_soporte'),

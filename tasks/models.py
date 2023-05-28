@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 from django.db import models
 from cloudinary.models import CloudinaryField
+
+
 # Create your models here.
 
 
@@ -149,6 +151,14 @@ class Capacitacion(models.Model):
     
     def __str__(self):
         return f'{self.titulo_error}'
+
+
+
+class Comment(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    contenido = models.TextField()
+    fecha = models.DateField()
+    hora = models.TimeField()
 
  
 #class Errores_pedidos(models.Model):

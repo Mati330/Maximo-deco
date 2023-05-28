@@ -13,8 +13,14 @@ from .models import *
 from .forms import *
 from django.views.generic.detail import DetailView
 
+from datetime import datetime
+from .models import Comment
+
 from openpyxl import Workbook
 from openpyxl.utils import get_column_letter
+
+import datetime
+
 
 
 
@@ -268,3 +274,20 @@ def resultados_de_busqueda(request):
 
     return render(request, 'search.html', {'resultados': resultados})
 
+### coment ####
+
+@login_required
+def crear_comentario(request):
+    if request.method == 'POST':
+        contenido = request.POST.get('contenido')
+        usuario = request.user
+        fecha = datetime.date.today()
+        hora = datetime.datetime.now().time()
+        comentario = Comment(usuario=usuario, contenido=contenido, fecha=fecha, hora=hora)
+        comentario.save()
+        # Obtener todos los comentarios para pasarlo al contexto
+        comentarios = Comment.objects.all()
+        return render(request, 'index.html', {'comentarios': comentarios})
+    else:
+        comentarios = Comment.objects.all()
+        return render(request, 'index.html', {'comentarios': comentarios})
