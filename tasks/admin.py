@@ -14,6 +14,8 @@ admin.site.register(Referentes_seginf)
 admin.site.register(Formularios)
 admin.site.register(Capacitacion)
 
+admin.site.register(Novedad)
+
 
 
 

@@ -36,7 +36,8 @@ llamada title, que dentro del html podemos llamarla como 'mytitle'.
 ## HTMLS TEMPLATES ## 
 
 def index(request):
-    return render(request, 'index.html',)
+    novedades = Novedad.objects.order_by('-fecha')
+    return render(request, 'index.html', {'novedades': novedades})
             
 ###################### LOGS HTML #####################
 def signup(request):
@@ -274,3 +275,4 @@ def resultados_de_busqueda(request):
 
 
 
+######### novedades 

@@ -30,9 +30,19 @@
 
         <!-- Agregar el cuadro de comentarios -->
     
-        <h2>Novedades</h2>
-
-        <h3>No hay novedades para mostrar..</h3>
+        {% for novedad in novedades %}
+        <div class="novedad-card">
+            <div class="novedad-image">
+                <img src="/static/img/core-img/new.png" alt="Novedades">
+            </div>
+            <div class="novedad-details">
+                <p class="novedad-date">{{ novedad.fecha }}</p>
+                <p class="novedad-time">{{ novedad.hora }}</p>
+                <p class="novedad-text">{{ novedad.texto|safe }}</p>
+            </div>
+        </div>
+        {% endfor %}
+        
         
 
         <br>
