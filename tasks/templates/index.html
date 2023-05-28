@@ -26,37 +26,19 @@
         <br>
         <br>
         <br>
-        
+
 
         <!-- Agregar el cuadro de comentarios -->
     
-        <h3>Deja tu comentario</h3>
-        <form method="post" action="{% url 'crear_comentario' %}">
-            {% csrf_token %}
-            <textarea name="contenido" placeholder="Escribe tu comentario aquí"></textarea>
-            <button type="submit">Enviar comentario</button>
-        </form>
+        <h2>Novedades</h2>
+
+        <h3>No hay novedades para mostrar..</h3>
+        
 
         <br>
         <br>
         <br>
 
-    
-
-    <!-- Mostrar los comentarios -->
-    
-    <h3>Comentarios</h3>
-    {% for comentario in comentarios %}
-        <div class="comment">
-            <div class="comment-info">
-                <span class="comment-author">{{ comentario.usuario }}</span>
-                <span class="comment-date">{{ comentario.fecha }} a las {{ comentario.hora }}</span>
-            </div>
-            <p>{{ comentario.contenido }}</p>
-        </div>
-    {% empty %}
-        <p>No hay comentarios aún.</p>
-    {% endfor %}
 
     </div>
 

@@ -154,11 +154,7 @@ class Capacitacion(models.Model):
 
 
 
-class Comment(models.Model):
-    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
-    contenido = models.TextField()
-    fecha = models.DateField()
-    hora = models.TimeField()
+
 
  
 #class Errores_pedidos(models.Model):
