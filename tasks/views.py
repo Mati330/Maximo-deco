@@ -174,7 +174,7 @@ class ver_errores_redes(LoginRequiredMixin, DetailView):
     model = Referentes_redes
     template_name = "ver_errores_redes.html"
 
-class ver_errores_seginf(LoginRequiredMixin, DetailView): 
+class ver_errores_tel(LoginRequiredMixin, DetailView): 
     model = Referentes_tel
     template_name = "ver_errores_tel.html"
     
