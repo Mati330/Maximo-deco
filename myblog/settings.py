@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-e=zajgs#(1fda%wf5ayzh5zd_$cp+02#ck230k&6xn0)wdm7oi
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['mati330.pythonanywhere.com']
 
 
 # Application definition
@@ -84,19 +84,16 @@ WSGI_APPLICATION = 'myblog.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 
-
-
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'fgqoPP5fJxoR7Ps8',
-        'HOST': 'db.axshwmvsyqvykoavijho.supabase.co',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mati330$SoporteMDA-HA',
+        'USER': 'mati330',
+        'PASSWORD': 'root12345',
+        'HOST': 'mati330.mysql.pythonanywhere-services.com',
     }
 }
+
 
 
 # Password validation
